@@ -1,18 +1,18 @@
 {
-  "name": "kelvinkamara",
+  "name": "react-boilerplate",
   "version": "1.0.0",
   "private": true,
   "description": "Soundscape, background noise app. To focus on your task and entertainment. I recommend earphone use. Reactjs.",
-  "homepage": "https://kkamara.github.io/kelvinkamara",
+  "homepage": "https://kkamara.github.io/react-boilerplate",
   "bugs": {
-    "url": "https://github.com/kkamara/kelvinkamara/issues"
+    "url": "https://github.com/kkamara/react-boilerplate/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://www.github.com/kkamara/kelvinkamara"
+    "url": "https://www.github.com/kkamara/react-boilerplate"
   },
   "license": "MIT",
-  "author": "https://www.github.com/kkamara/kelvinkamara",
+  "author": "https://www.github.com/kkamara/react-boilerplate",
   "scripts": {
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
