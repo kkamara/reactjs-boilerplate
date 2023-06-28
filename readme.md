@@ -1,6 +1,6 @@
 <img src="https://codedthemes.com/wp-content/uploads/edd/2022/05/Materially-ReactJS-Admin-Dashboard.webp" alt="Materially-ReactJS-Admin-Dashboard.webp" width=""/>
 
-# react-boilerplate
+# react-boilerplate [![Run CI](https://github.com/kkamara/node-react-boilerplate/actions/workflows/node.js.yml/badge.svg)](https://github.com/kkamara/node-react-boilerplate/actions/workflows/node.js.yml)
 
 :electron: (Live Link) (2022) Reactjs 16 with redux.
 
