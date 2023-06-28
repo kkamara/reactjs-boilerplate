@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "37d5a4ffad9b23a3185f657883241f82",
+    "revision": "89221ab9489dad652b9056e8945c70da",
     "url": "/kelvinkamara/index.html"
   },
   {
-    "revision": "8d8780e8df9f82765761",
+    "revision": "1fb85a89be5e5afb878b",
     "url": "/kelvinkamara/static/css/2.81f49716.chunk.css"
   },
   {
-    "revision": "5e7e92bdd0a5961a7fde",
+    "revision": "ea990262ca63e605c285",
     "url": "/kelvinkamara/static/css/main.a115b5c1.chunk.css"
   },
   {
-    "revision": "8d8780e8df9f82765761",
-    "url": "/kelvinkamara/static/js/2.d7212970.chunk.js"
+    "revision": "1fb85a89be5e5afb878b",
+    "url": "/kelvinkamara/static/js/2.3781d6e2.chunk.js"
   },
   {
     "revision": "b7b99439f8da9eed6d6a2d6f5237cb83",
-    "url": "/kelvinkamara/static/js/2.d7212970.chunk.js.LICENSE.txt"
+    "url": "/kelvinkamara/static/js/2.3781d6e2.chunk.js.LICENSE.txt"
   },
   {
     "revision": "150ab38b2d0a7a14e273",
@@ -28,8 +28,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/kelvinkamara/static/js/3.36a05895.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "92fcea49d1628e1b0b01",
-    "url": "/kelvinkamara/static/js/4.e697c7ff.chunk.js"
+    "revision": "634e5e3f3c908a6aa0a8",
+    "url": "/kelvinkamara/static/js/4.de415502.chunk.js"
   },
   {
     "revision": "781b39f146fcfcb5307d",
@@ -52,12 +52,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/kelvinkamara/static/js/9.17c00f38.chunk.js"
   },
   {
-    "revision": "5e7e92bdd0a5961a7fde",
-    "url": "/kelvinkamara/static/js/main.9d352f53.chunk.js"
+    "revision": "ea990262ca63e605c285",
+    "url": "/kelvinkamara/static/js/main.cecbfb72.chunk.js"
   },
   {
-    "revision": "4d6b1feef92c88c2d935",
-    "url": "/kelvinkamara/static/js/runtime-main.04225d89.js"
+    "revision": "9151f5a9449d1c7b2cd4",
+    "url": "/kelvinkamara/static/js/runtime-main.29999bd5.js"
   },
   {
     "revision": "cbf9c83a4aea661d4c61e3272e5fe789",
