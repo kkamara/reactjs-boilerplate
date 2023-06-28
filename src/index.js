@@ -1,13 +1,15 @@
-import React from 'react'
-import { createRoot, } from 'react-dom/client'
-import { Provider } from 'react-redux'
-import { Helmet } from 'react-helmet'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 
-import App from './App'
-import store from './redux/store'
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 
-import './index.scss'
-import favicon from './favicon.png'
+import App from './layout/App';
+import reducer from './store/reducer';
+import config from './config';
+import './assets/scss/style.scss';
+import * as serviceWorker from './serviceWorker';
 
 import $ from'jquery'
 import Popper from'popper.js'
@@ -16,26 +18,23 @@ import 'bootstrap/dist/js/bootstrap.bundle.min'
 
 import reportWebVitals from './reportWebVitals'
 
-const container = document.getElementById('root')
-const root = createRoot(container)
+import { GoogleOAuthProvider } from '@react-oauth/google'
 
-root.render(
-  <React.StrictMode>
-    <Helmet>
-      <link 
-        rel="icon" 
-        type="image/png"
-        href={favicon}
-      />
-    </Helmet>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>
-)
+const store = createStore(reducer);
 
+ReactDOM.render(
+    <GoogleOAuthProvider clientId="900577447575-chnn3od0mtrepikfe7jkmla78cgc6e8t.apps.googleusercontent.com">
+        <Provider store={store}>
+            <BrowserRouter basename={config.basename}>
+                <App />
+            </BrowserRouter>
+        </Provider>
+    </GoogleOAuthProvider>,
+    document.getElementById('root')
+);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister()
+reportWebVitals()

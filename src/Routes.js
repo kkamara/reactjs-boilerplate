@@ -1,30 +1,48 @@
-import React from 'react'
-import { Routes, Route, } from 'react-router-dom'
+import React, { lazy, Suspense } from 'react';
+import { Switch, Route, Redirect, useLocation, } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 
-import PrivateRoute from './PrivateRoute'
-import { Guard } from './Guard'
+import Loader from './component/Loader/Loader';
+import NavMotion from './layout/NavMotion';
+import MainLayout from './layout/MainLayout';
+import MinimalLayout from './layout/MinimalLayout';
 
-import Header from './components/layouts/Header'
+import LoginModal from './views/LoginModal'
 
-import Home from "./components/pages/HomeComponent"
+const DashboardDefault = lazy(() => import('./views/Dashboard/Default'));
 
-import { url } from './utils/config'
+const Routes = () => {
+    const location = useLocation();
 
-export default () => {
-  return (
-    <>
-      <Header/>
-      <Routes>
-        <Route path={url("/")} element={<Home />}/>  
+    return (
+        <AnimatePresence>
+            <Suspense fallback={<Loader />}>
+                <Switch>
+                    <Redirect exact from="/" to="/dashboard/default" />
+                    <Route path={[]}>
+                        <MinimalLayout>
+                            <Switch location={location} key={location.pathname}>
+                                <NavMotion></NavMotion>
+                            </Switch>
+                        </MinimalLayout>
+                    </Route>
+                    <Route path={[ '/', ]}>
+                        <MainLayout>
+                            <Switch location={location} key={location.pathname}>
+                                <NavMotion>
+                                    <Route 
+                                        path="/dashboard/default" 
+                                        component={DashboardDefault} 
+                                    />
+                                </NavMotion>
+                            </Switch>
+                        </MainLayout>
+                    </Route>
+                    <Route path="/*" element={ <Redirect to="/" /> }/>
+                </Switch>
+            </Suspense>
+        </AnimatePresence>
+    );
+};
 
-        {/*Redirect if not authenticated */} 
-        {/* <Guard 
-            path={url("/user" )}
-            token="user-token" 
-            routeRedirect={url("/user/login" )}
-            component={PrivateRoute}
-        /> */}
-      </Routes>
-    </>
-  )
-}
+export default Routes;

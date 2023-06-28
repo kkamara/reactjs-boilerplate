@@ -2,7 +2,7 @@
 
 # react-boilerplate
 
-:electron: (Live Link) (2022) Reactjs 18 with redux.
+:electron: (Live Link) (2022) Reactjs 16 with redux.
 
 ## Requirements
 
