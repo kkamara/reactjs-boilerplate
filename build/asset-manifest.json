@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-boilerplate/static/css/main.a115b5c1.chunk.css",
-    "main.js": "/react-boilerplate/static/js/main.b64a6f04.chunk.js",
-    "main.js.map": "/react-boilerplate/static/js/main.b64a6f04.chunk.js.map",
+    "main.js": "/react-boilerplate/static/js/main.cfce0b58.chunk.js",
+    "main.js.map": "/react-boilerplate/static/js/main.cfce0b58.chunk.js.map",
     "runtime-main.js": "/react-boilerplate/static/js/runtime-main.2f9d431f.js",
     "runtime-main.js.map": "/react-boilerplate/static/js/runtime-main.2f9d431f.js.map",
     "static/css/2.81f49716.chunk.css": "/react-boilerplate/static/css/2.81f49716.chunk.css",
@@ -23,7 +23,7 @@
     "static/js/9.f82ef8ce.chunk.js": "/react-boilerplate/static/js/9.f82ef8ce.chunk.js",
     "static/js/9.f82ef8ce.chunk.js.map": "/react-boilerplate/static/js/9.f82ef8ce.chunk.js.map",
     "index.html": "/react-boilerplate/index.html",
-    "precache-manifest.19968699efeadffe78422bca9ddc0fbe.js": "/react-boilerplate/precache-manifest.19968699efeadffe78422bca9ddc0fbe.js",
+    "precache-manifest.3da13171bf5e528a7b2968098c708f10.js": "/react-boilerplate/precache-manifest.3da13171bf5e528a7b2968098c708f10.js",
     "service-worker.js": "/react-boilerplate/service-worker.js",
     "static/css/2.81f49716.chunk.css.map": "/react-boilerplate/static/css/2.81f49716.chunk.css.map",
     "static/css/main.a115b5c1.chunk.css.map": "/react-boilerplate/static/css/main.a115b5c1.chunk.css.map",
@@ -39,6 +39,6 @@
     "static/css/2.81f49716.chunk.css",
     "static/js/2.d8ab97d0.chunk.js",
     "static/css/main.a115b5c1.chunk.css",
-    "static/js/main.b64a6f04.chunk.js"
+    "static/js/main.cfce0b58.chunk.js"
   ]
 }

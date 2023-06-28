@@ -18,7 +18,6 @@ const Routes = () => {
         <AnimatePresence>
             <Suspense fallback={<Loader />}>
                 <Switch>
-                    <Redirect exact from="/" to="/dashboard/default" />
                     <Route path={[]}>
                         <MinimalLayout>
                             <Switch location={location} key={location.pathname}>
@@ -31,7 +30,7 @@ const Routes = () => {
                             <Switch location={location} key={location.pathname}>
                                 <NavMotion>
                                     <Route 
-                                        path="/dashboard/default" 
+                                        path="/" 
                                         component={DashboardDefault} 
                                     />
                                 </NavMotion>
