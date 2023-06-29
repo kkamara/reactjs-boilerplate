@@ -8,7 +8,7 @@ import MonetizationOnTwoTone from '@material-ui/icons/MonetizationOnTwoTone';
 import DescriptionTwoTone from '@material-ui/icons/DescriptionTwoTone';
 import ThumbUpAltTwoTone from '@material-ui/icons/ThumbUpAltTwoTone';
 import CalendarTodayTwoTone from '@material-ui/icons/CalendarTodayTwoTone';
-
+import { Helmet, } from 'react-helmet'
 import SalesLineCard from './SalesLineCard';
 import SalesLineCardData from './chart/sale-chart-1';
 
@@ -59,6 +59,8 @@ const Default = () => {
     const theme = useTheme();
 
     return (
+		  <>
+		    <Helmet><title>React Boilerplate</title> </Helmet>
         <Grid container spacing={gridSpacing}>
             <Grid item xs={12}>
                 <Grid container spacing={gridSpacing}>
@@ -270,6 +272,7 @@ const Default = () => {
                 <LatestorderCard title="Latest Order" />
             </Grid>
         </Grid>
+      </>
     );
 };
 
