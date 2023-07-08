@@ -8,7 +8,7 @@ import MonetizationOnTwoTone from '@material-ui/icons/MonetizationOnTwoTone';
 import DescriptionTwoTone from '@material-ui/icons/DescriptionTwoTone';
 import ThumbUpAltTwoTone from '@material-ui/icons/ThumbUpAltTwoTone';
 import CalendarTodayTwoTone from '@material-ui/icons/CalendarTodayTwoTone';
-import { Helmet, } from 'react-helmet'
+import { Helmet, } from 'react-helmet';
 import SalesLineCard from './SalesLineCard';
 import SalesLineCardData from './chart/sale-chart-1';
 
