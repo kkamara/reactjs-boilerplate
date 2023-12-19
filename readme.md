@@ -22,6 +22,14 @@ npm install
 npm start
 ```
 
+## Misc
+
+[See PHP Reactjs Boilerplate.](https://github.com/kkamara/php-reactjs-boilerplate)
+
+[See Python Reactjs Boilerplate.](https://github.com/kkamara/python-reactjs-boilerplate)
+
+[See Nodejs Reactjs Boilerplate.](https://github.com/kkamara/nodejs-reactjs-boilerplate)
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
