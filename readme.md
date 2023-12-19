@@ -1,25 +1,25 @@
 <img src="https://codedthemes.com/wp-content/uploads/edd/2022/05/Materially-ReactJS-Admin-Dashboard.webp" alt="Materially-ReactJS-Admin-Dashboard.webp" width=""/>
 
+<img src="https://github.com/kkamara/useful/blob/main/reactjs-boilerplate.png?raw=true" alt="reactjs-boilerplate.png" width=""/>
+
 # react-boilerplate
 
-:electron: (Live Link) (2022) Reactjs 16 with redux.
+:electron: (Live Link) (2022) Reactjs 18 with redux.
 
 ## Requirements
 
-* [Node.js](https://nodejs.org/en/)
-* [Yarn](https://yarnpkg.com/).
+* [Node.js](https://nodejs.org/en/).
 
 ## Installation
 
 ```bash
-  yarn install
-  # yarn
+npm install
 ```
 
 ## Usage
 
 ```bash
-  yarn start
+npm start
 ```
 
 ## Contributing
