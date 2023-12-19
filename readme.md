@@ -2,7 +2,7 @@
 
 <img src="https://github.com/kkamara/useful/blob/main/reactjs-boilerplate.png?raw=true" alt="reactjs-boilerplate.png" width=""/>
 
-# react-boilerplate
+# reactjs-boilerplate
 
 :electron: (2022) Reactjs 18 with Redux.
 
