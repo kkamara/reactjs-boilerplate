@@ -2,6 +2,7 @@ import React, { useEffect, useState, } from 'react'
 import { useNavigate, } from 'react-router-dom'
 import { useDispatch, useSelector, } from 'react-redux'
 import { Helmet, } from "react-helmet"
+import { APP_NAME } from "../../../constants"
 import { login, authorize, } from '../../../redux/actions/authActions'
 
 import "./LoginComponent.scss"
@@ -45,7 +46,7 @@ export default function LoginComponent() {
   if (state.auth.loading) {
     return <div className='container login-container text-center'>
       <Helmet>
-        <title>Sign In - {import.meta.env.VITE_APP_NAME}</title>
+        <title>Sign In - {APP_NAME}</title>
       </Helmet>
       <p>Loading...</p>
     </div>
@@ -53,7 +54,7 @@ export default function LoginComponent() {
 
   return <div className='container login-container'>
     <Helmet>
-      <title>Sign In - {import.meta.env.VITE_APP_NAME}</title>
+      <title>Sign In - {APP_NAME}</title>
     </Helmet>
     <div className="col-md-4 offset-md-4">
       <h1 className="login-lead fw-bold">Sign In</h1>

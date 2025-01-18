@@ -2,6 +2,7 @@ import React, { useEffect, } from 'react'
 import { useDispatch, } from "react-redux"
 import { useSelector, } from 'react-redux'
 import { Link, } from 'react-router-dom'
+import { APP_NAME } from "../../constants"
 import { authorize, } from "../../redux/actions/authActions"
 
 import "./Header.scss"
@@ -54,12 +55,10 @@ export default function Header(props) {
       </>
     }
   }
-  // VITE_TEST
-  console.log(import.meta.env)
   return <nav className="navbar navbar-expand-lg mb-4 bg-primary" data-bs-theme="dark">
     <div className="container">
       <Link className="navbar-brand" to="/">
-        {import.meta.env.VITE_APP_NAME}
+        {APP_NAME}
       </Link>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>

@@ -3,6 +3,7 @@ import { useDispatch, useSelector, } from 'react-redux'
 import ReactPaginate from 'react-paginate'
 import moment from 'moment'
 import { Helmet, } from "react-helmet"
+import { APP_NAME } from "../../constants"
 import { getUsers, } from '../../redux/actions/usersActions'
 
 import "./HomeComponent.scss"
@@ -110,7 +111,7 @@ export default function HomeComponent() {
   if (state.auth.loading || state.users.loading) {
     return <div className="container home-container text-center">
       <Helmet>
-        <title>Home - {import.meta.env.VITE_APP_NAME}</title>
+        <title>Home - {APP_NAME}</title>
       </Helmet>
       <p>Loading...</p>
     </div>
@@ -119,7 +120,7 @@ export default function HomeComponent() {
   return (
     <div className='container home-container'>
       <Helmet>
-        <title>Home - {import.meta.env.VITE_APP_NAME}</title>
+        <title>Home - {APP_NAME}</title>
       </Helmet>
       <div className="text-center">
         <button className='btn btn-primary home-button'>
