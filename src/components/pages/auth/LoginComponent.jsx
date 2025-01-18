@@ -1,7 +1,8 @@
 import React, { useEffect, useState, } from 'react'
 import { useNavigate, } from 'react-router-dom'
 import { useDispatch, useSelector, } from 'react-redux'
-import { login, } from '../../../redux/actions/authActions'
+import { Helmet, } from "react-helmet"
+import { login, authorize, } from '../../../redux/actions/authActions'
 
 import "./LoginComponent.scss"
 
@@ -19,6 +20,8 @@ export default function LoginComponent() {
   useEffect(() => {
     if (state.auth.data) {
       window.location.href = "/"
+    } else if (state.auth.loading) {
+      dispatch(authorize())
     }
   }, [state.auth])
 
@@ -40,54 +43,58 @@ export default function LoginComponent() {
   }
 
   if (state.auth.loading) {
-    return <p>Loading...</p>
+    return <div className='container login-container text-center'>
+      <Helmet>
+        <title>Sign In - {import.meta.env.VITE_APP_NAME}</title>
+      </Helmet>
+      <p>Loading...</p>
+    </div>
   }
 
-  return (
-    <>
-      <div className='container login-container'>
-        <div className="col-md-4 offset-md-4">
-          <h3 className="lead">Login</h3>
-          <form method="post" onSubmit={onFormSubmit}>
-            {state.auth.error ?
-              <div className="alert alert-warning alert-dismissible fade show" role="alert">
-                {state.auth.error}
-                <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div> : null}
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input 
-                name="email" 
-                className="form-control"
-                value={email}
-                onChange={onEmailChange}
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="password">Password</label>
-              <input 
-                type="password"
-                name="password" 
-                className="form-control"
-                value={password}
-                onChange={onPasswordChange}
-              />
-            </div>
-            <div className="login-buttons-container mt-3 text-end">
-              <a 
-                href="/user/register" 
-                className="btn btn-primary"
-              >
-                Register
-              </a>
-              <input 
-                type="submit" 
-                className="btn btn-success login-submit-button ms-4" 
-              />
-            </div>
-          </form>
+  return <div className='container login-container'>
+    <Helmet>
+      <title>Sign In - {import.meta.env.VITE_APP_NAME}</title>
+    </Helmet>
+    <div className="col-md-4 offset-md-4">
+      <h1 className="login-lead fw-bold">Sign In</h1>
+      <form method="post" onSubmit={onFormSubmit}>
+        {state.auth.error ?
+          <div className="alert alert-warning alert-dismissible fade show" role="alert">
+            {state.auth.error}
+            <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div> : null}
+        <div className="form-group">
+          <label htmlFor="email">Email</label>
+          <input 
+            name="email" 
+            className="form-control"
+            value={email}
+            onChange={onEmailChange}
+          />
         </div>
-      </div>
-    </>       
-  )
+        <div className="form-group">
+          <label htmlFor="password">Password</label>
+          <input 
+            type="password"
+            name="password" 
+            className="form-control"
+            value={password}
+            onChange={onPasswordChange}
+          />
+        </div>
+        <div className="login-buttons-container mt-3 text-end">
+          <a 
+            href="/user/register" 
+            className="btn btn-primary"
+          >
+            Register
+          </a>
+          <input 
+            type="submit" 
+            className="btn btn-success login-submit-button ms-4" 
+          />
+        </div>
+      </form>
+    </div>
+  </div>
 }

@@ -1,15 +1,15 @@
 import React, { useEffect, useState, } from 'react'
 import { useNavigate, } from 'react-router-dom'
 import { useDispatch, useSelector, } from 'react-redux'
-import { register, } from '../../../redux/actions/authActions'
+import { Helmet, } from "react-helmet"
+import { register, authorize, } from '../../../redux/actions/authActions'
 
 import "./RegisterComponent.scss"
 
 export default function RegisterComponent() {
   const navigate = useNavigate()
 
-  const [firstName, setFirstName] = useState("")
-  const [lastName, setLastName] = useState("")
+  const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [passwordConfirmation, setPasswordConfirmation] = useState("")
@@ -20,37 +20,29 @@ export default function RegisterComponent() {
   useEffect(() => {
     if (localStorage.getItem("user-token")) {
       return navigate("/")
+    } else if (authState.loading) {
+      dispatch(authorize())
     }
   }, [authState,])
-
-  if (authState.loading) {
-    return <p>Loading...</p>
-  }
 
   const onFormSubmit = (e) => {
     e.preventDefault()
 
     dispatch(register({
       password_confirmation: passwordConfirmation,
-      first_name: firstName,
-      last_name: lastName,
+      name,
       email,
       password
     }))
 
-    setFirstName("")
-    setLastName("")
+    setName("")
     setEmail("")
     setPassword("")
     setPasswordConfirmation("")
   }
 
-  const onFirstNameChange = (e) => {
-    setFirstName(e.target.value)
-  }
-
-  const onLastNameChange = (e) => {
-    setLastName(e.target.value)
+  const onNameChange = (e) => {
+    setName(e.target.value)
   }
 
   const onEmailChange = (e) => {
@@ -65,79 +57,78 @@ export default function RegisterComponent() {
     setPasswordConfirmation(e.target.value)
   }
 
-  return (
-    <>
-      <div className='container login-container'>
-        <div className="col-md-4 offset-md-4">
-          <h3 className="lead">Register</h3>
-          <form method="post" onSubmit={onFormSubmit}>
-            {authState.error ?
-              <div className="alert alert-warning alert-dismissible fade show" role="alert">
-                {authState.error}
-                <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div> : null}
-            <div className="form-group">
-              <label htmlFor="first_name">First Name</label>
-              <input 
-                name="first_name" 
-                className="form-control"
-                value={firstName}
-                onChange={onFirstNameChange}
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="last_name">Last Name</label>
-              <input 
-                name="last_name" 
-                className="form-control"
-                value={lastName}
-                onChange={onLastNameChange}
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input 
-                name="email" 
-                className="form-control"
-                value={email}
-                onChange={onEmailChange}
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="password">Password</label>
-              <input 
-                type="password"
-                name="password" 
-                className="form-control"
-                value={password}
-                onChange={onPasswordChange}
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="password_confirmation">Password Confirmation</label>
-              <input 
-                type="password"
-                name="password_confirmation" 
-                className="form-control"
-                value={passwordConfirmation}
-                onChange={onPasswordConfirmationChange}
-              />
-            </div>
-            <div className="register-buttons-container mt-4 text-end">
-              <a 
-                href="/user/login" 
-                className="btn btn-primary"
-              >
-                Login
-              </a>
-              <input 
-                type="submit" 
-                className="btn btn-success register-submit-button ms-4" 
-              />
-            </div>
-          </form>
+  if (authState.loading) {
+    return <div className='container register-container text-center'>
+      <Helmet>
+        <title>Register - {import.meta.env.VITE_APP_NAME}</title>
+      </Helmet>
+      <p>Loading...</p>
+    </div>
+  }
+
+  return <div className='container register-container text-start'>
+    <Helmet>
+      <title>Register - {import.meta.env.VITE_APP_NAME}</title>
+    </Helmet>
+    <div className="col-md-4 offset-md-4">
+      <h1 className="register-lead fw-bold">Register</h1>
+      <form method="post" onSubmit={onFormSubmit}>
+        {authState.error ?
+          <div className="alert alert-warning alert-dismissible fade show" role="alert">
+            {authState.error}
+            <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div> : null}
+        <div className="form-group">
+          <label htmlFor="name">Name</label>
+          <input 
+            name="name" 
+            className="form-control"
+            value={name}
+            onChange={onNameChange}
+          />
         </div>
-      </div>
-    </>       
-  )
+        <div className="form-group">
+          <label htmlFor="email">Email</label>
+          <input 
+            name="email" 
+            className="form-control"
+            value={email}
+            onChange={onEmailChange}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="password">Password</label>
+          <input 
+            type="password"
+            name="password" 
+            className="form-control"
+            value={password}
+            onChange={onPasswordChange}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="password_confirmation">Password Confirmation</label>
+          <input 
+            type="password"
+            name="password_confirmation" 
+            className="form-control"
+            value={passwordConfirmation}
+            onChange={onPasswordConfirmationChange}
+          />
+        </div>
+        <div className="register-buttons-container mt-4 text-end">
+          <a 
+            href="/user/login" 
+            className="btn btn-primary"
+          >
+            Sign In
+          </a>
+          <input 
+            type="submit" 
+            className="btn btn-success register-submit-button ms-4" 
+          />
+        </div>
+      </form>
+    </div>
+  </div>
 }

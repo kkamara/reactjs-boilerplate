@@ -3,7 +3,7 @@ import { users, } from '../types'
 const initState = {
   data: null,
   error: null,
-  loading: false,
+  loading: true,
 }
 
 export default function usersReducer (state = initState, action) {
@@ -27,6 +27,7 @@ export default function usersReducer (state = initState, action) {
         ...state,
         data: action.payload,
         loading: false,
+        error: null,
       }
 
     default:
