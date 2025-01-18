@@ -13,13 +13,13 @@
 ## Installation
 
 ```bash
-npm install
+yarn install
 ```
 
 ## Usage
 
 ```bash
-npm start
+yarn start
 ```
 
 ## Misc
