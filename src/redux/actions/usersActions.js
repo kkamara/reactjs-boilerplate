@@ -18,13 +18,13 @@ export const getUsers = page => {
             payload: res.data,
           }))
         }, error => {
-          reject(dispatch({ 
+          resolve(dispatch({ 
             type : users.GET_USERS_ERROR, 
             payload: error,
           }))
         })
       ).catch(error => {
-        reject(dispatch({ 
+        resolve(dispatch({ 
           type : users.GET_USERS_ERROR, 
           payload: error,
         }))
