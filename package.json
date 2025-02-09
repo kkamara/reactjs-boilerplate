@@ -32,7 +32,7 @@
     "react-redux": "^7.2.8",
     "react-router": "^7.1.5",
     "react-router-dom": "^7.1.5",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "redux": "^4.1.2",
     "redux-thunk": "^2.3.0",
     "sass": "^1.84.0"
