@@ -4,7 +4,7 @@
 
 # reactjs-boilerplate
 
-:electron: (2022) ReactJS 18 with Redux.
+:electron: (2022) ReactJS 19 with Redux.
 
 ## Requirements
 

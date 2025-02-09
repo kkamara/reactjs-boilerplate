@@ -2,7 +2,7 @@
   "name": "reactjs-boilerplate",
   "version": "0.1.0",
   "private": true,
-  "description": ":electron: (2022) Reactjs 18 with Redux.",
+  "description": ":electron: (2022) ReactJS 19 with Redux.",
   "bugs": {
     "url": "https://github.com/kkamara/reactjs-boilerplate/issues"
   },
