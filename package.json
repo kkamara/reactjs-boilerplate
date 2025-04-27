@@ -1,6 +1,6 @@
 {
   "name": "reactjs-boilerplate",
-  "version": "0.1.0",
+  "version": "0.1.0-development",
   "private": true,
   "description": ":electron: (2022) ReactJS 19 with Redux.",
   "bugs": {
